@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Maiysha Fatima 🎉</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(135deg, pink, gold);
+        text-align: center;
+        color: #fff;
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 3em;
+        margin-top: 50px;
+        animation: fadeInDown 1.5s ease-in-out;
+    }
+    .intro {
+        font-size: 1.5em;
+        animation: fadeIn 2s ease-in-out;
+        margin-top: 20px;
+    }
+    .cat {
+        width: 150px;
+        margin-top: 20px;
+    }
+    .question {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        padding: 15px;
+        margin: 15px auto;
+        width: 80%;
+        font-size: 1.2em;
+    }
+    button {
+        background: gold;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1em;
+        cursor: pointer;
+        margin: 5px;
+    }
+    button:hover {
+        background: #ffcc00;
+    }
+    .reply {
+        margin-top: 10px;
+        font-style: italic;
+    }
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<!-- GitHub Intro -->
+<div class="intro">👋 Welcome to Mark's GitHub Birthday Surprise!</div>
+
+<!-- Birthday Heading -->
+<h1>🎂 Happy Birthday <br> Maiysha Fatima 🎀</h1>
+
+<!-- Cute Cat -->
+<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" class="cat" alt="Cute Cat">
+
+<!-- Funny Questions -->
+<div id="questions"></div>
+
+<!-- Birthday Song -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const questions = [
+    "1. Do you accept cake as currency today?",
+    "2. Is it legal to eat all the cake alone?",
+    "3. Are we besties or just cake partners?",
+    "4. Should I sing Happy Birthday in a bad voice?",
+    "5. Is today officially cheat day?",
+    "6. Can I post your funny pics online?",
+    "7. Are birthday calories real?",
+    "8. Should I get you 100 balloons?",
+    "9. Will you share your gifts with me?",
+    "10. Are we going to dance like no one's watching?",
+    "11. Is pink your spirit color?",
+    "12. Are you ready for endless birthday hugs?"
+];
+
+const replies = [
+    "🎉 Absolutely!",
+    "🍰 Yes, cake is life!",
+    "😂 Of course!",
+    "🎤 Please do!",
+    "😋 100% yes!",
+    "📸 Nooo!",
+    "💪 Nope, no calories today!",
+    "🎈 Bring them all!",
+    "🎁 Only if you ask nicely!",
+    "💃 Let’s gooo!",
+    "🌸 Always!",
+    "🤗 Always ready!"
+];
+
+let container = document.getElementById("questions");
+
+questions.forEach((q, i) => {
+    let div = document.createElement("div");
+    div.className = "question";
+    div.innerHTML = `
+        ${q}<br>
+        <button onclick="showReply(${i})">Yes</button>
+        <button onclick="showReply(${i})">No</button>
+        <div class="reply" id="reply${i}"></div>
+    `;
+    container.appendChild(div);
+});
+
+function showReply(index) {
+    document.getElementById(`reply${index}`).innerText = replies[index];
+}
+</script>
+
+</body>
+  </html>
+  
